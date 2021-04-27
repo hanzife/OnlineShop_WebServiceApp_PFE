@@ -14,16 +14,26 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
-@Service
+@Service //This annotation is a specialization of the @Component annotation, it is used to mark the class as a service provider.
 public class CategoryServiceImp implements CategoryService {
 
-    @Autowired
+
+    @Autowired //: Our dependency injection annotation, autowiring our application is fundamental when building it.
     CategoryRepository categoryRepository;
 
-    public Category createCategory(Category user) {
-        return categoryRepository.save(user);
+    @Override
+    public ApiResponse createCategory(CategoryDto categoryDto) {
+
+        Category category = new Category();
+        category.setLableCategory(categoryDto.getLableCategory());
+        BeanUtils.copyProperties(categoryDto, category);
+        System.out.println("Service category: " + category.getLableCategory());
+        System.out.println("Service categoryDto: " + categoryDto.getLableCategory());
+        categoryRepository.save(category);
+        return new ApiResponse(200, "success", category);
     }
 
     public Optional<Category> getCategory(int id) {
@@ -46,12 +56,14 @@ public class CategoryServiceImp implements CategoryService {
     //Update Category
     public Category updateCatedory(int id, Category category) {
         Optional<Category> editCategory= categoryRepository.findById(id);
+
         if (!editCategory.isPresent()) {
             throw new CategoryNotFoundException(id);
-        } else {
+        } else
             categoryRepository.findById(id);
-            System.out.println(category.getLableCategory());
-        }
+            //categoryRepository.deleteById(id);
+            System.out.println(categoryRepository.findById(id));
+
         return categoryRepository.save(category);
     }
 }

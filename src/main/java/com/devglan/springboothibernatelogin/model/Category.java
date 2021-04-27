@@ -8,14 +8,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table
+@Entity(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String LableCategory;
-    private String productId;
+    @Column(nullable = false, length = 35, unique = true)
+    private String lableCategory;
 }

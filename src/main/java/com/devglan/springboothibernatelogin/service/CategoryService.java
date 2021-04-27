@@ -1,6 +1,7 @@
 package com.devglan.springboothibernatelogin.service;
 
 import com.devglan.springboothibernatelogin.dto.ApiResponse;
+import com.devglan.springboothibernatelogin.dto.CategoryDto;
 import com.devglan.springboothibernatelogin.model.Category;
 
 import java.util.Optional;
@@ -10,7 +11,7 @@ import java.util.Optional;
 public interface CategoryService {
 
      //Calling Methods
-     Category createCategory(Category user);
+     ApiResponse createCategory(CategoryDto categoryDto);
      Optional<Category> getCategory(int id);
      void deleteCategory(Integer id);
      Category updateCatedory(int id, Category category);

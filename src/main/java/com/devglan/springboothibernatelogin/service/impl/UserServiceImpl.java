@@ -21,6 +21,8 @@ public class UserServiceImpl implements UserService {
         validateSignUp(signUpDto);
         User user = new User();
         BeanUtils.copyProperties(signUpDto, user);
+        System.out.println("Service user: " + user.getUsername());
+
         userDao.save(user);
         return new ApiResponse(200, "success", user);
     }
