@@ -34,8 +34,12 @@ public class UserServiceImpl implements UserService {
         if(!user.getPassword().equals(loginDto.getPassword())){
             throw new RuntimeException("Password mismatch.");
         }
-        return new ApiResponse(200, "Login success", user) ;
 
+        /*if(user.getRole() == "Admin"){
+        }
+        else*/
+
+        return new ApiResponse(200, "Login success", user) ;
     }
 
     private void validateSignUp(SignUpDto signUpDto) {
