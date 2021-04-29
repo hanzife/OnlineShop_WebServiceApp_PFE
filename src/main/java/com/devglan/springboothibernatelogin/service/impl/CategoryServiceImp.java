@@ -30,8 +30,6 @@ public class CategoryServiceImp implements CategoryService {
         Category category = new Category();
         category.setLableCategory(categoryDto.getLableCategory());
         BeanUtils.copyProperties(categoryDto, category);
-        System.out.println("Service category: " + category.getLableCategory());
-        System.out.println("Service categoryDto: " + categoryDto.getLableCategory());
         categoryRepository.save(category);
         return new ApiResponse(200, "success", category);
     }
@@ -62,7 +60,6 @@ public class CategoryServiceImp implements CategoryService {
         } else
             categoryRepository.findById(id);
             //categoryRepository.deleteById(id);
-            System.out.println(categoryRepository.findById(id));
 
         return categoryRepository.save(category);
     }

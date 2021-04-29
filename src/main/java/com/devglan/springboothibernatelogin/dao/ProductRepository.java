@@ -6,11 +6,15 @@ import org.springframework.stereotype.Repository;
 
 import java.awt.print.Pageable;
 import java.util.List;
+import java.util.Optional;
+
 //repositories for accessing the data from the database
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
         //find product by category id
         List<Product> findAllByCategoryId(int categpryId);
+
+        Optional<Product> findProductByNameProduct(String nameProduct);
 
 }
