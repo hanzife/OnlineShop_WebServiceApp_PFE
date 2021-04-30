@@ -1,9 +1,12 @@
 package com.devglan.springboothibernatelogin.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -17,14 +20,15 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nameImage;
+    private String urlImage;
 
     private String typeImage;
 
-    @Lob
-    private byte[] dataImage;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private Product product;
 
 
-    public Image(String fileName, String contentType, byte[] bytes) {
-    }
 }

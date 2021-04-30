@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-//@Entity(name = "categories")
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -19,4 +18,5 @@ public class Category {
 
     @Column(nullable = false, length = 35, unique = true)
     private String lableCategory;
+
 }

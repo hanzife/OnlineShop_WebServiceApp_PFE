@@ -1,6 +1,10 @@
 package com.devglan.springboothibernatelogin.service.impl;
 
+import com.devglan.springboothibernatelogin.dao.ProductRepository;
+import com.devglan.springboothibernatelogin.dto.ImageDto;
+import com.devglan.springboothibernatelogin.model.Product;
 import com.devglan.springboothibernatelogin.service.ImageService;
+import org.springframework.beans.BeanUtils;
 import  org.springframework.util.StringUtils;
 import com.devglan.springboothibernatelogin.dao.ImageRepository;
 import com.devglan.springboothibernatelogin.dto.ApiResponse;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 public class ImageServiceImp implements ImageService {
@@ -17,25 +22,29 @@ public class ImageServiceImp implements ImageService {
     @Autowired
     private ImageRepository imageRepository;
 
-    public ApiResponse saveImage(MultipartFile file) throws IOException{
+    @Autowired
+    private ProductRepository productRepository;
+
+    //public ApiResponse saveImage(long productId, MultipartFile file) throws IOException{
+    public ApiResponse saveImage(long productID, ImageDto imageDto){
 
         String message ="";
+
         try {
-            String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-            System.out.println(fileName);
-            System.out.println( file.getContentType());
-            System.out.println( file.getBytes());
+
+            productRepository.findById(productID).orElseThrow(() -> new RuntimeException("Product not found with id " + productID));
+
             Image image = new Image();
-            image.setNameImage(fileName);
-            image.setTypeImage(file.getContentType());
-            image.setDataImage(file.getBytes());
+            BeanUtils.copyProperties(imageDto, image);
+            image.setProduct(productRepository.findProductById(productID));
+
             imageRepository.save(image);
-            System.out.println( image.getDataImage());
             message ="Image was inserted";
             return new ApiResponse(200,message, image);
         }
         catch (Exception e){
-            return new ApiResponse(200, e.getMessage(), null);
+            message ="error inserting image";
+            return new ApiResponse(200, e.getMessage(), message);
         }
 
     }
