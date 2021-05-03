@@ -17,5 +17,4 @@ public class ImageDto {
     private String typeImage;
     private long product;
 
-
 }
