@@ -20,11 +20,9 @@ public class User {
     //Informs the persistence layer that the strategy used to generate the value of our primary key is by auto-increasing when a new user is created.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String firstName;
-    private String lastName;
+    private String username;
     @Column(nullable = false, length = 35, unique = true)
     private String email;
-    private String username;
     @JsonIgnore
     private String password;
 
