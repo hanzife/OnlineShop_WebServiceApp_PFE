@@ -17,6 +17,7 @@ import java.awt.print.Pageable;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("http://localhost:4200") //Adapt port to agular server to let angular have access to backend
 @RequestMapping
 public class ProductController {
 

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="./img/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Welcome To Cleopatra</title>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- start navbar -->
+<div
+  class="md:fixed md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 border-b border-gray-300">
+
+  <!-- logo -->
+  <div class="flex-none w-56 flex flex-row items-center">
+    <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+    </svg>
+
+    <strong class="capitalize ml-1 flex-1">Plant Shop</strong>
+  </div>
+  <!-- end logo -->
+
+  <!-- navbar content toggle -->
+  <button class=" md:block md:fixed right-0 mr-6">
+    Log out
+  </button>
+  <!-- end navbar content toggle -->
+
+
+
+</div>
+<!-- end navbar -->
+
+<!-- strat wrapper -->
+<div class="h-screen w-full flex flex-row flex-wrap">
+  <!-- start sidebar -->
+  <div id="sideBar"
+       class="relative flex flex-col flex-wrap bg-white border-r border-gray-300 p-6 flex-none w-64 md:fixed md:top-0 md:h-screen md:shadow-xl ">
+
+    <!-- sidebar content -->
+    <div class="flex flex-col">
+
+      <!-- sidebar toggle -->
+      <div class="text-right hidden h-16 md:block mb-4">
+
+      </div>
+      <!-- end sidebar toggle -->
+
+      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">homes</p>
+
+      <!-- link -->
+      <a href="./index.html"
+         class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-chart-pie text-xs mr-2"></i>
+        Add Product
+      </a>
+      <!-- end link -->
+
+      <!-- link -->
+      <a href="./index-1.html"
+         class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        List Products
+      </a>
+      <!-- end link -->
+
+
+
+
+    </div>
+    <!-- end sidebar content -->
+
+  </div>
+  <!-- end sidbar -->
+
+
+
+  <!-- strat content -->
+  <div class=" ml-64 flex-1 p-6 relative top-16 ">
+    <!-- General Report -->
+    <div class="grid  grid-cols-4 w-full gap-6 xl:grid-cols-1 ">
+
+      <div>
+        <div class="w-full md:grid md:grid-cols-3  md:gap-6">
+
+          <!-- FORM -->
+          <div class="mt-5 ml-36 bg-white w-full md:col-span-2">
+            <form action="#" method="POST">
+              <div class="shadow   w-full sm:rounded-md sm:overflow-hidden">
+                <div class="px-4 py-5 space-y-6 sm:p-6">
+
+                  <!-- <div class="grid grid-cols-3 gap-6">
+                      <div class="col-span-3 sm:col-span-2">
+                          <label for="company_website"
+                              class="block text-sm font-medium text-gray-700">
+                              Image
+                          </label>
+                          <div class="mt-1 flex rounded-md shadow-sm">
+                              <span
+                                  class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                                  http://
+                              </span>
+                              <input type="text" name="company_website" id="company_website"
+                                  class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                                  placeholder="www.example.com">
+                          </div>
+                      </div>
+
+                  </div> -->
+
+                  <div>
+                    <label for="" class="block text-sm font-medium text-gray-700">
+                      Product Name
+                    </label>
+                    <div class="mt-1">
+                      <input  name="nameProduct"  [(ngModel)]="product.nameProduct" rows="3"
+                             class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                             placeholder="product name">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="" class="block text-sm font-medium text-gray-700">
+                      Product Description
+                    </label>
+                    <div class="mt-1">
+                                                <textarea id="" name="descriptionProduct"  [(ngModel)]="product.descriptionProduct" rows="3"
+                                                          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                          placeholder="Brief description for your product"></textarea>
+                    </div>
+
+                  </div>
+
+
+
+                  <div>
+                    <label for="about" class="block text-sm font-medium text-gray-700">
+                      Stock Quantity
+                    </label>
+                    <div class="mt-1">
+                      <input id="about" name="qntStockProduct"  [(ngModel)]="product.qntStockProduct" rows="3"
+                             class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                             type="number">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button (click)="saveProduct()"
+                          class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- End General Report -->
+
+
+  </div>
+  <!-- end  content -->
+
+</div>
+
+
+
+<!-- script -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="js/scripts.js"></script>
+<!-- end script -->
+
+</body>
+
+</html>
