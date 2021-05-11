@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AddProductComponent} from "../components/add-product/add-product.component";
+import {ProductListComponent} from "../components/product-list/product-list.component";
 
 const routes: Routes = [
   {path: 'add-product', component: AddProductComponent},
+  {path: 'products', component: ProductListComponent },
 ];
 
 @NgModule({
@@ -15,5 +17,4 @@ export class ProductRoutingModule {
   descriptionProduct?: string;
   qntStockProduct?: number;
   category?: number;
-
 }

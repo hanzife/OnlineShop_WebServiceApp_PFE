@@ -9,6 +9,7 @@ import {ProductService} from "../../services/product.service";
 })
 export class AddProductComponent implements OnInit {
 
+  //product Modul from routing
   product: ProductRoutingModule={
     nameProduct:'',
     descriptionProduct:'',
@@ -17,7 +18,7 @@ export class AddProductComponent implements OnInit {
   }
   submitted = false;
 
-
+  //Our Product Service with (CRUD functions called by UI buttons)
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {

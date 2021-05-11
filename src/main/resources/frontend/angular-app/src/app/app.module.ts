@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { AddProductComponent } from './product-component/components/add-product/add-product.component';
 import {ProductModule} from "./product-component/product/product.module";
+import { ProductListComponent } from './product-component/components/product-list/product-list.component';
 
 //Declaring the url routes
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
     AppComponent,
     AppComponentComponent,
     AddProductComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
