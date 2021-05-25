@@ -14,10 +14,7 @@ export class ProductListComponent implements OnInit {
   products?: ProductRoutingModule[];
   currentProduct?: ProductRoutingModule;
   currentIndex = -1;
-  //nameProduct:'';
-  //descriptionProduct:'';
-  //qntStockProduct:0;
-  //category:0;
+
 
   constructor(private productService: ProductService) { }
 

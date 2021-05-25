@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="./img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Welcome To Cleopatra</title>
+
+    <style>
+        .label-floating input:not(:placeholder-shown) {
+            padding-top: 1.4rem;
+        }
+
+        .label-floating input:not(:placeholder-shown)~label {
+            font-size: 0.6rem;
+            transition: all 0.2s ease-in-out;
+            color: #1f9d55;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- start navbar -->
+    <div class="fixed w-full bg-white border-b border-gray-300">
+        <div class="relative w-5/6  mx-auto  md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white p-6 ">
+            <!-- logo -->
+            <div class="flex-none w-56 flex flex-row items-center">
+                <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+                </svg>
+
+                <strong class="capitalize ml-1 flex-1">Plant Shop</strong>
+            </div>
+            <div class="flex space-x-4">
+                <a href="">Products</a>
+            </div>
+            <!-- end logo -->
+
+            <!-- navbar content toggle -->
+            <div class="md:absolute right-6 space-x-2">
+                <button class=" bg-gray-300 text-gray-600 px-4 py-2 rounded">
+                    Log In
+                </button>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">
+                    Register
+                </button>
+            </div>
+
+            <!-- end navbar content toggle -->
+
+
+
+        </div>
+    </div>
+
+    <!-- end navbar -->
+
+
+
+    <!-- strat wrapper -->
+    <div class="w-5/6 mx-auto flex flex-row flex-wrap h-screen ">
+        <!-- strat content -->
+        <div class="w-2/6 my-auto mx-auto bg-white  ">
+            <!-- form -->
+            <form class="rounded  mx-auto  px-12 pt-12 pb-12 bg-white shadow-lg">
+                <h3 class="mb-8 text-3xl font-bold text-green text-center">LOG IN</h3>
+                <div class="relative border rounded mb-4 shadow appearance-none label-floating">
+                    <input class="w-full py-2 px-3 text-green-darker  rounded" id="password" type="password"
+                        placeholder="Username">
+                    <label class="absolute top-2 left-3 block text-green-darker  w-full   " for="password">
+                        Username
+                    </label>
+                </div>
+                <div class="relative border rounded mb-4 shadow appearance-none label-floating">
+                    <input class="w-full py-2 px-3 text-green-darker  rounded" id="password" type="password"
+                        placeholder="Password">
+                    <label class="absolute top-2 left-3 block text-green-darker  w-full   " for="password">
+                        Password
+                    </label>
+                </div>
+                <div class="space-y-8 items-center justify-between">
+                    <button class="w-full bg-green-500 hover:bg-black text-white py-2 px-4 rounded  font-medium"
+                        type="button">
+                        LOG IN
+                    </button>
+                    <div class="border border-t-1 w-full ">
+                    </div>
+                    <div class="space-y-2">
+                        <button
+                            class="w-full bg-gray-300 hover:bg-black text-white py-2 px-4 rounded text-gray-600 font-medium"
+                            type="button">
+                            Login With Facebook
+                        </button>
+                        <button class="w-full bg-gray-700 hover:bg-black text-white py-2 px-4 rounded  font-medium"
+                            type="button">
+                            Login With Google
+                        </button>
+                    </div>
+                </div>
+                <h2 class="text-center text-grey hover:text-grey-darker mt-6" href="#">
+                    <a href="">New Here? Register!</a>
+                </h2>
+            </form>
+            <!-- end form -->
+
+
+
+        </div>
+    </div>
+    <!-- end  content -->
+    </div>
+
+</body>
+
+</html>

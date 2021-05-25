@@ -4,16 +4,20 @@ import com.devglan.springboothibernatelogin.dto.ApiResponse;
 import com.devglan.springboothibernatelogin.dto.CategoryDto;
 import com.devglan.springboothibernatelogin.dto.SignUpDto;
 import com.devglan.springboothibernatelogin.model.Category;
+import com.devglan.springboothibernatelogin.model.Product;
 import com.devglan.springboothibernatelogin.model.User;
 import com.devglan.springboothibernatelogin.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 
 
 @RestController //Combines the @Controller and @ResponseBody annotations, which eliminates the need to annotate every request handling method of the controller class with @ResponseBody.
 @RequestMapping
+@CrossOrigin("http://localhost:4200") //Adapt port to agular server to let angular have access to backend
 public class CategoryController {
 
     @Autowired
@@ -28,7 +32,7 @@ public class CategoryController {
         return categoryService.createCategory(categoryDto);
     }
 
-    //Detail : When given a valid HTTP GET request in /categories/{id}, retrieve the details of a specific user by its id.
+    //get : When given a valid HTTP GET request in /categories/{id}, retrieve the details of a specific user by its id.
     @GetMapping(path="/categories/{id}")
     //Straightforward way to set the status code of our HTTP response.
     @ResponseStatus(HttpStatus.OK)
@@ -36,6 +40,15 @@ public class CategoryController {
         Optional<Category> getCategory = categoryService.getCategory(id);
         return new ApiResponse(200, "category Found", getCategory);
     }
+
+    //Get : All Categories
+    @GetMapping(path="/all_categories")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse getCategories() {
+        List<Category> categories =  categoryService.getCategories();
+        return new ApiResponse(200, "Categories", categories);
+    }
+
 
     //Delete : When given a valid HTTP DELETE request in /users/{id}, delete a specific user by its id.
     @DeleteMapping( "categories/{id}")

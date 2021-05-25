@@ -4,6 +4,7 @@ import com.devglan.springboothibernatelogin.dto.ApiResponse;
 import com.devglan.springboothibernatelogin.dto.CategoryDto;
 import com.devglan.springboothibernatelogin.model.Category;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -15,5 +16,6 @@ public interface CategoryService {
      Optional<Category> getCategory(int id);
      void deleteCategory(Integer id);
      Category updateCatedory(int id, Category category);
+     List<Category> getCategories();
 
 }

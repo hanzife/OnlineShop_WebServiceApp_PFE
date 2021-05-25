@@ -7,6 +7,7 @@ import com.devglan.springboothibernatelogin.dto.CategoryDto;
 import com.devglan.springboothibernatelogin.dto.LoginDto;
 import com.devglan.springboothibernatelogin.dto.SignUpDto;
 import com.devglan.springboothibernatelogin.model.Category;
+import com.devglan.springboothibernatelogin.model.Product;
 import com.devglan.springboothibernatelogin.model.User;
 import com.devglan.springboothibernatelogin.service.CategoryService;
 
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service //This annotation is a specialization of the @Component annotation, it is used to mark the class as a service provider.
@@ -39,6 +41,15 @@ public class CategoryServiceImp implements CategoryService {
             throw new RuntimeException("Category Not Found");
         }
         return category;
+    }
+
+    @Override
+    public List<Category> getCategories() {
+        List<Category> categories = categoryRepository.findAll();
+        if(categories.isEmpty()) {
+            throw new RuntimeException("Category Not Found");
+        }
+        return categories;
     }
 
     public void deleteCategory(Integer id) {
