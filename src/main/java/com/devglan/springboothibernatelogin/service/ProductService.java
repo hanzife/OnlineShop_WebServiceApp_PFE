@@ -15,6 +15,8 @@ public interface ProductService {
 
     List<Product> getProductByCategory(int id);
     Optional<Product> getProduct(long id);
+    List<Product> getProducts();
     ApiResponse createProduct(int categoryId, ProductDto productDto);
+
 
 }

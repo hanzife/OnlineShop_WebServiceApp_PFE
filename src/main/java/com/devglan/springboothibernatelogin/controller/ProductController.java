@@ -9,6 +9,7 @@ import com.devglan.springboothibernatelogin.model.Product;
 import com.devglan.springboothibernatelogin.service.ProductService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +33,14 @@ public class ProductController {
     public ApiResponse getProdyctByCategory(@PathVariable(value = "categoryId") int categoryId) {
         List<Product> products =  productService.getProductByCategory(categoryId);
         return new ApiResponse(200, "Products by Category", products);
+    }
+
+    //Get: All Products
+    @GetMapping(path="/products")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse getProdycts(){
+        List<Product> products =  productService.getProducts();
+        return new ApiResponse(200, "Products List", products);
     }
 
     //Get One Product

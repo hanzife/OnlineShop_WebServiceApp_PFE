@@ -38,6 +38,16 @@ public class ProductServiceImp implements ProductService {
         return products;
     }
 
+    @Override
+    public List<Product> getProducts() {
+        List<Product> products = productRepository.findAll();
+        if(products.isEmpty()) {
+            throw new RuntimeException("Products Not Found");
+        }
+        return products;
+    }
+
+
 
     public Optional<Product> getProduct(long id){
         Optional<Product> product = productRepository.findById(id);

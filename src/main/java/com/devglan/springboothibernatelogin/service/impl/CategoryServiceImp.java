@@ -43,6 +43,7 @@ public class CategoryServiceImp implements CategoryService {
         return category;
     }
 
+    //Get All Categories
     @Override
     public List<Category> getCategories() {
         List<Category> categories = categoryRepository.findAll();
