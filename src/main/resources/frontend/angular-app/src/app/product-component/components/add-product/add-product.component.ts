@@ -13,6 +13,7 @@ export class AddProductComponent implements OnInit {
   product: ProductRoutingModule={
     nameProduct:'',
     descriptionProduct:'',
+    priceProduct:0,
     qntStockProduct:0,
     category:0,
   }
@@ -28,6 +29,7 @@ export class AddProductComponent implements OnInit {
     const data = {
       nameProduct: this.product.nameProduct,
       descriptionProduct: this.product.descriptionProduct,
+      priceProduct:this.product.priceProduct,
       qntStockProduct: this.product.qntStockProduct,
       category: 8,
     };

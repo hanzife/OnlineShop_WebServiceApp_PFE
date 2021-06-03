@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
 @Data
 @Entity
@@ -26,8 +27,16 @@ public class Product {
     @Column(nullable = false, length = 250)
     private String descriptionProduct;
 
+    @Column(nullable = false, length = 250)
+    private Double priceProduct;
+
     @NotNull
     private int qntStockProduct;
+
+    /*
+    @ElementCollection
+    @CollectionTable(name="listOfUsers")
+    private ArrayList<String> images = new ArrayList<String>();*/
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

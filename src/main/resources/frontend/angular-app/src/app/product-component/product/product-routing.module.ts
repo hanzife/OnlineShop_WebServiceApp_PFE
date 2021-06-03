@@ -16,5 +16,6 @@ export class ProductRoutingModule {
   nameProduct?: string;
   descriptionProduct?: string;
   qntStockProduct?: number;
+  priceProduct?: number;
   category?: number;
 }

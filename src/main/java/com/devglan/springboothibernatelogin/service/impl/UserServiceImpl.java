@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     public ApiResponse login(LoginDto loginDto) {
         User user = userDao.findByUsername(loginDto.getUsername());
         if(user == null) {
-            throw new RuntimeException("User already exist.");
+            throw new RuntimeException("User not found check your username.");
         }
         if(!user.getPassword().equals(loginDto.getPassword())){
             throw new RuntimeException("Password mismatch.");
